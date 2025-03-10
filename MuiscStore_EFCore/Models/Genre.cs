@@ -12,7 +12,7 @@ namespace MuiscStore_EFCore.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int GenreId { get; set; }
 
         [Required]
         public string Name { get; set; } = null!;

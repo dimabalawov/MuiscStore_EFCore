@@ -13,13 +13,14 @@ namespace MuiscStore_EFCore.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int PromotionId { get; set; }
 
         [Required]
         public string Name { get; set; } = null!;
-        public virtual ICollection<Record> Records { get; set; }
 
         [Required]
         public int Discount { get; set; } = 0!;
+
+        public ICollection<Record> Records { get; set; } = new List<Record>();
     }
 }

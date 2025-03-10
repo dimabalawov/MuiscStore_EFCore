@@ -12,11 +12,13 @@ namespace MuiscStore_EFCore.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int UserId { get; set; }
 
         [Required]
         public string Name { get; set; } = null!;
         [Required]
         public string Password { get; set; } = null!;
+
+        public ICollection<Record> Records { get; set; } = new List<Record>();
     }
 }

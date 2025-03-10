@@ -12,10 +12,10 @@ namespace MuiscStore_EFCore.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int WeekyBestId { get; set; }
 
-        public List<Record> Records { get; set; } = new();
-        public List<Genre> Genres { get; set; } = new();
-        public List<Author> Authors { get; set; } = new();
+        public ICollection<Record> Records { get; set; } = new List<Record>();
+        public ICollection<Genre> Genres { get; set; } = new List<Genre>();
+        public ICollection<Author> Authors { get; set; } = new List<Author>();
     }
 }

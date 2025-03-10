@@ -12,16 +12,13 @@ namespace MuiscStore_EFCore.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int RecordId { get; set; }
 
         [Required]
         public string Name { get; set; } = null!;
 
         [Required]
         public int AuthorId { get; set; }
-
-        [ForeignKey("AuthorId")]
-        public Author Author { get; set; } = null!;
 
         [Required]
         public string Publisher { get; set; } = null!;
@@ -31,9 +28,6 @@ namespace MuiscStore_EFCore.Models
 
         [Required]
         public int GenreId { get; set; }
-
-        [ForeignKey("GenreId")]
-        public Genre Genre { get; set; } = null!;
 
         [Required]
         [Column(TypeName = "money")]
@@ -45,8 +39,15 @@ namespace MuiscStore_EFCore.Models
         [Range(0, double.MaxValue)]
         public decimal Price { get; set; } = 0;
 
-        [ForeignKey("PromotionId")]
-        public virtual Promotion Promotion { get; set; }
         public int PromotionId { get; set; }
+
+        public int UserId { get; set; }
+
+        public int DailyBestId { get; set; }
+        public int WeeklyBestId { get; set; }
+        public int MonthlyBestId { get; set; }
+        public int YearlyBestId { get; set; }
+
+
     }
 }
